@@ -23,7 +23,7 @@
                 <h5 class="card-title">{{ item.title }}</h5>
                 <p class="card-text">{{ item.description }}</p>
                 <div class="d-flex align-items-center justify-content-between">
-                  <p class="fw-bold">${{ item.price }}</p>
+                  <price :value="Number(item.price)"></price>
                   <button class="btn btn-primary">
                     <font-awesome-icon icon="cart-plus" />
                   </button>
@@ -39,6 +39,7 @@
 
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import Price from "./Price.vue";
 
 export default {
   name: "product-list",
@@ -53,6 +54,7 @@ export default {
   },
   components: {
     FontAwesomeIcon,
+    Price,
   },
   methods: {
     before: function (el) {
